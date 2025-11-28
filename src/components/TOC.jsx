@@ -15,7 +15,7 @@ export default function TOC() {
 
     return (
         <section className="py-20 px-6 bg-gray-50">
-            <h2 className="text-3xl font-bold text-center mb-10">Table of Contents</h2>
+            <h2 className="text-3xl font-bold mb-10">Table of Contents</h2>
             <ul className="max-w-3xl mx-auto space-y-3 list-decimal list-inside text-gray-800">
                 {chapters.map((chapter, idx) => (
                     <li key={idx} className="hover:text-purple-700 transition">{chapter}</li>
