@@ -2,7 +2,7 @@ export default function Footer() {
     return (
         <footer className="text-white py-5" style={{ backgroundColor: '#212529' }}>
             <div className="section-container">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 'clamp(1rem, 3vw, 2rem)', marginBottom: 'clamp(1rem, 3vw, 2rem)' }}>
                     {/* Brand */}
                     <div className="animate-fade-in-up">
                         <h5 className="fw-bold mb-3" style={{ fontSize: '1.25rem' }}>Funded Dreams</h5>

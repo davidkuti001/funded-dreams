@@ -30,18 +30,18 @@ export default function Pricing() {
     ];
 
     return (
-        <section className="py-5 px-4" style={{ paddingTop: '4rem', paddingBottom: '4rem', backgroundColor: '#f8f9fa' }}>
+        <section className="py-5 px-4" style={{ paddingTop: 'clamp(2rem, 8vw, 4rem)', paddingBottom: 'clamp(2rem, 8vw, 4rem)', backgroundColor: '#f8f9fa' }}>
             <div className="section-container">
-                <div className="text-center mb-5 animate-fade-in-up" style={{ marginBottom: '3rem' }}>
-                    <h2 className="fw-bold mb-3" style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)' }}>
+                <div className="text-center mb-5 animate-fade-in-up" style={{ marginBottom: 'clamp(1.5rem, 5vw, 3rem)' }}>
+                    <h2 className="fw-bold mb-3" style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>
                         Get Your Copy Today
                     </h2>
-                    <p className="lead" style={{ fontSize: '1.1rem', color: '#6c757d', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
+                    <p className="lead" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', color: '#6c757d', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
                         Choose your preferred platform and start your journey to funded education. Instant access to all 10+ chapters and bonus resources.
                     </p>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(1rem, 3vw, 1.5rem)', marginBottom: 'clamp(1.5rem, 5vw, 3rem)' }}>
                     {platforms.map((platform, idx) => (
                         <div
                             key={platform.name}
@@ -85,7 +85,7 @@ export default function Pricing() {
                             <a
                                 href={platform.link}
                                 className={`btn ${platform.featured ? 'btn-primary' : 'btn-outline-primary'}`}
-                                style={{ width: '100%', textAlign: 'center', display: 'inline-block' }}
+                                style={{ width: '100%', textAlign: 'center', display: 'block', padding: 'clamp(0.5rem, 2vw, 0.875rem) clamp(0.75rem, 3vw, 1.5rem)' }}
                             >
                                 {platform.cta}
                             </a>

@@ -2,9 +2,9 @@
 
 export default function Hero() {
     return (
-        <section className="hero-gradient text-white py-5 px-4 overflow-hidden" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <section className="hero-gradient text-white py-5 px-4 overflow-hidden" style={{ paddingTop: 'clamp(3rem, 8vw, 6rem)', paddingBottom: 'clamp(3rem, 8vw, 6rem)' }}>
             <div className="section-container">
-                <div className="row align-items-center" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+                <div className="row align-items-center" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(1rem, 5vw, 3rem)', alignItems: 'center' }}>
                     {/* Left: Text Content */}
                     <div className="animate-fade-in-up">
                         <span className="badge text-bg-info mb-3" style={{ fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em' }}>
@@ -20,18 +20,18 @@ export default function Hero() {
                             Discover how to navigate the complex world of international education financing. Learn proven strategies from students who have successfully secured scholarships and alternative funding options to make your dream education a reality.
                         </p>
 
-                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem', marginBottom: '3rem' }}>
+                        <div style={{ display: 'flex', gap: 'clamp(0.5rem, 2vw, 1rem)', flexWrap: 'wrap', marginTop: '2rem', marginBottom: '3rem' }}>
                             <a
                                 href="https://selar.co"
                                 className="btn btn-primary btn-lg"
-                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', flex: '1 1 auto', minWidth: '200px' }}
                             >
                                 Buy on Selar — ₦3,500
                             </a>
                             <a
                                 href="https://gumroad.com"
                                 className="btn btn-outline-light btn-lg"
-                                style={{ borderWidth: '2px' }}
+                                style={{ borderWidth: '2px', flex: '1 1 auto', minWidth: '200px' }}
                             >
                                 View on Gumroad
                             </a>

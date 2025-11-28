@@ -81,18 +81,18 @@ export default function TOC() {
     };
 
     return (
-        <section className="py-5 px-4" style={{ paddingTop: '4rem', paddingBottom: '4rem', backgroundColor: 'white' }}>
+        <section className="py-5 px-4" style={{ paddingTop: 'clamp(2rem, 8vw, 4rem)', paddingBottom: 'clamp(2rem, 8vw, 4rem)', backgroundColor: 'white' }}>
             <div className="section-container">
-                <div className="text-center mb-5 animate-fade-in-up" style={{ marginBottom: '3rem' }}>
-                    <h2 className="fw-bold mb-3" style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)' }}>
+                <div className="text-center mb-5 animate-fade-in-up" style={{ marginBottom: 'clamp(1.5rem, 5vw, 3rem)' }}>
+                    <h2 className="fw-bold mb-3" style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>
                         Table of Contents
                     </h2>
-                    <p className="lead" style={{ fontSize: '1.1rem', color: '#6c757d', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
+                    <p className="lead" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', color: '#6c757d', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
                         Explore all 10+ chapters covering everything you need to know about funding your international education.
                     </p>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '2rem', alignItems: 'start' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(1rem, 3vw, 2rem)', alignItems: 'start' }}>
                     {/* TOC Navigation */}
                     <aside className="animate-slide-in-left">
                         <nav
