@@ -4,20 +4,20 @@
 
 /* Bootstrap-inspired color system with dark mode */
 :root {
-    --primary: #0d6efd;
-    --secondary: #6c757d;
-    --success: #198754;
-    --danger: #dc3545;
-    --warning: #ffc107;
-    --info: #0dcaf0;
-    --light: #f8f9fa;
-    --dark: #212529;
+    --primary: #1e3a8a; /* Navy blue */
+    --secondary: #3b82f6; /* Light blue */
+    --success: #10b981; /* Green */
+    --danger: #ef4444; /* Red */
+    --warning: #f59e0b; /* Yellow */
+    --info: #38bdf8; /* Cyan */
+    --light: #f3f4f6; /* Light gray */
+    --dark: #1f2937; /* Dark gray */
 
-    --navy-900: #0f172a;
-    --navy-800: #1e293b;
-    --navy-700: #334155;
-    --navy-600: #475569;
-    --navy-500: #64748b;
+    --navy-900: #1e293b;
+    --navy-800: #334155;
+    --navy-700: #475569;
+    --navy-600: #64748b;
+    --navy-500: #94a3b8;
 
     /* Dark mode colors */
     --bg-dark: #0f172a;

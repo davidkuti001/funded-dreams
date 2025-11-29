@@ -33,10 +33,10 @@ export default function Pricing() {
         <section className="py-5 px-4" style={{ paddingTop: 'clamp(2rem, 8vw, 4rem)', paddingBottom: 'clamp(2rem, 8vw, 4rem)', backgroundColor: '#f8f9fa' }}>
             <div className="section-container">
                 <div className="text-center mb-5 animate-fade-in-up" style={{ marginBottom: 'clamp(1.5rem, 5vw, 3rem)' }}>
-                    <h2 className="fw-bold mb-3" style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>
+                    <h2 className="fw-bold mb-3" style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', color: '#0d6efd' }}>
                         Get Your Copy Today
                     </h2>
-                    <p className="lead" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', color: '#6c757d', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
+                    <p className="lead" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', color: '#495057', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
                         Choose your preferred platform and start your journey to funded education. Instant access to all 10+ chapters and bonus resources.
                     </p>
                 </div>
@@ -50,7 +50,11 @@ export default function Pricing() {
                                 animationDelay: `${idx * 0.2}s`,
                                 borderWidth: platform.featured ? '2px' : '1px',
                                 transform: platform.featured ? 'scale(1.05)' : 'scale(1)',
-                                transformOrigin: 'center'
+                                transformOrigin: 'center',
+                                backgroundColor: '#ffffff',
+                                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                                borderRadius: '8px',
+                                overflow: 'hidden'
                             }}
                         >
                             {platform.featured && (
@@ -61,10 +65,10 @@ export default function Pricing() {
                                 </div>
                             )}
                             
-                            <h5 className="fw-bold mb-2">{platform.name}</h5>
-                            
+                            <h5 className="fw-bold mb-2" style={{ color: '#212529' }}>{platform.name}</h5>
+
                             <div style={{ marginBottom: '1.5rem' }}>
-                                <div style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.25rem' }}>
+                                <div style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.25rem', color: '#0d6efd' }}>
                                     <span style={{ fontSize: '1rem', color: '#6c757d' }}>{platform.currency}</span>
                                     {platform.price}
                                 </div>
@@ -85,60 +89,37 @@ export default function Pricing() {
                             <a
                                 href={platform.link}
                                 className={`btn ${platform.featured ? 'btn-primary' : 'btn-outline-primary'}`}
-                                style={{ width: '100%', textAlign: 'center', display: 'block', padding: 'clamp(0.5rem, 2vw, 0.875rem) clamp(0.75rem, 3vw, 1.5rem)' }}
+                                style={{
+                                    maxWidth: '100%',
+                                    textAlign: 'center',
+                                    display: 'block',
+                                    padding: 'clamp(0.5rem, 2vw, 0.875rem) clamp(0.75rem, 3vw, 1.5rem)',
+                                    fontSize: '1rem',
+                                    fontWeight: '600',
+                                    borderRadius: '8px',
+                                    transition: 'transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s',
+                                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                                    backgroundColor: platform.featured ? '#0d6efd' : 'transparent',
+                                    color: platform.featured ? '#ffffff' : '#0d6efd',
+                                    margin: '0 auto'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.transform = 'scale(1.05)';
+                                    e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+                                    e.target.style.backgroundColor = platform.featured ? '#0056b3' : '#e9ecef';
+                                    e.target.style.color = platform.featured ? '#ffffff' : '#0d6efd';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.transform = 'scale(1)';
+                                    e.target.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+                                    e.target.style.backgroundColor = platform.featured ? '#0d6efd' : 'transparent';
+                                    e.target.style.color = platform.featured ? '#ffffff' : '#0d6efd';
+                                }}
                             >
                                 {platform.cta}
                             </a>
                         </div>
                     ))}
-                </div>
-
-                <div className="card animate-fade-in-up" style={{ backgroundColor: 'white', borderColor: '#dee2e6' }}>
-                    <h5 className="fw-bold mb-4">What's Included:</h5>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
-                            <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>📚</span>
-                            <div>
-                                <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>10+ Comprehensive Chapters</p>
-                                <p style={{ fontSize: '0.875rem', color: '#6c757d', margin: 0 }}>Complete guide from beginning to end</p>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
-                            <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>✨</span>
-                            <div>
-                                <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Success Stories</p>
-                                <p style={{ fontSize: '0.875rem', color: '#6c757d', margin: 0 }}>Real experiences from funded students</p>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
-                            <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>🛠️</span>
-                            <div>
-                                <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Bonus Tools & Resources</p>
-                                <p style={{ fontSize: '0.875rem', color: '#6c757d', margin: 0 }}>Templates, checklists, and guides</p>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
-                            <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>🌍</span>
-                            <div>
-                                <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Global Financing Options</p>
-                                <p style={{ fontSize: '0.875rem', color: '#6c757d', margin: 0 }}>Multiple funding pathways explained</p>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
-                            <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>💡</span>
-                            <div>
-                                <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Expert Insights</p>
-                                <p style={{ fontSize: '0.875rem', color: '#6c757d', margin: 0 }}>Tips and strategies from professionals</p>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
-                            <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>♾️</span>
-                            <div>
-                                <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Lifetime Updates</p>
-                                <p style={{ fontSize: '0.875rem', color: '#6c757d', margin: 0 }}>Get new content as it's released</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
