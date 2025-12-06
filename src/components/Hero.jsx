@@ -113,7 +113,7 @@ export default function Hero() {
                                 boxShadow: '0 4px 15px rgba(13, 110, 253, 0.3)'
                             }}
                         >
-                            ✨ YOUR PATH TO GLOBAL EDUCATION
+                            YOUR PATH TO GLOBAL EDUCATION
                         </span>
 
                         <h1
