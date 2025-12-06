@@ -166,7 +166,7 @@ export default function Hero() {
                             }}
                         >
                             <a
-                                href="https://selar.co"
+                                href="https://selar.com/747m077905"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{

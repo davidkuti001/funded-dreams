@@ -43,7 +43,7 @@ export default function Pricing() {
                 isLimitedOffer: true,
                 features: ['Instant Access', 'Nigerian Payment', 'Mobile Friendly', 'Full Content'],
                 cta: 'Buy on Selar',
-                link: 'https://selar.co'
+                link: 'https://selar.com/747m077905'
             },
             {
                 name: 'Gumroad',
