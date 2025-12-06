@@ -237,7 +237,7 @@ export default function Footer() {
                         margin: 0,
                         letterSpacing: '0.3px',
                     }}>
-                        &copy; {new Date().getFullYear()} Funded Dreams. All rights reserved.
+                        &copy; {new Date().getFullYear()} Cedars Travel and Tours. All rights reserved.
                     </p>
                 </div>
             </div>
