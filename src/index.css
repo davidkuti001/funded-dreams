@@ -49,6 +49,11 @@ body {
     color: var(--navy-900);
 }
 
+/* Remove underlines from all links on hover */
+a, a:hover, a:focus, a:active {
+    text-decoration: none !important;
+}
+
 :not(.dark-mode) h1, :not(.dark-mode) h2, :not(.dark-mode) h3, :not(.dark-mode) h4, :not(.dark-mode) h5, :not(.dark-mode) h6 {
     color: var(--navy-900);
 }
