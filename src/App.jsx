@@ -6,7 +6,7 @@ import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
 
 function App() {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
     const [showScrollTop, setShowScrollTop] = useState(false);
 
     // Handle scroll to show/hide scroll to top button
