@@ -196,7 +196,7 @@ export default function Hero() {
                                     e.currentTarget.style.boxShadow = '0 8px 20px rgba(13, 110, 253, 0.4)';
                                 }}
                             >
-                                Buy on Selar — ₦10,000
+                                Buy on Selar
                             </a>
 
                             <a
