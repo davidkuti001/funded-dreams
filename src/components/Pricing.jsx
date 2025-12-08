@@ -40,6 +40,7 @@ export default function Pricing() {
                 originalPrice: '30,000',
                 price: '10,000',
                 featured: true,
+                active: true,
                 isLimitedOffer: true,
                 features: ['Instant Access', 'Nigerian Payment', 'Mobile Friendly', 'Full Content'],
                 cta: 'Buy on Selar',
@@ -51,10 +52,11 @@ export default function Pricing() {
                 originalPrice: gumroadOriginalPrice,
                 price: gumroadPrice,
                 featured: false,
+                active: false,
                 isLimitedOffer: true,
                 features: ['Instant Access', 'PayPal & Card', 'Email Delivery', 'Lifetime Access'],
-                cta: 'Buy on Gumroad',
-                link: 'https://gumroad.com'
+                cta: 'Coming Soon',
+                link: '#'
             },
             {
                 name: 'Payhip',
@@ -62,10 +64,11 @@ export default function Pricing() {
                 originalPrice: payhipOriginalPrice,
                 price: payhipPrice,
                 featured: false,
+                active: false,
                 isLimitedOffer: true,
                 features: ['Instant Access', 'Global Payments', 'Secure Checkout', 'Email Support'],
-                cta: 'Buy on Payhip',
-                link: 'https://payhip.com'
+                cta: 'Coming Soon',
+                link: '#'
             }
         ];
     }, [exchangeRate]);
@@ -123,6 +126,28 @@ export default function Pricing() {
                     }}>
                         Choose your preferred platform and start your journey to funded education. Instant access to all chapters, bonus resources, and lifetime support.
                     </p>
+
+                    {/* Notice about available payment options */}
+                    <div style={{
+                        marginTop: '1.5rem',
+                        padding: '1rem 1.5rem',
+                        backgroundColor: darkMode ? 'rgba(255, 193, 7, 0.1)' : 'rgba(255, 193, 7, 0.05)',
+                        border: `1px solid ${darkMode ? 'rgba(255, 193, 7, 0.3)' : 'rgba(255, 193, 7, 0.2)'}`,
+                        borderRadius: '8px',
+                        maxWidth: '600px',
+                        marginLeft: 'auto',
+                        marginRight: 'auto'
+                    }}>
+                        <p style={{
+                            fontSize: '0.9rem',
+                            color: darkMode ? '#ffd700' : '#856404',
+                            margin: 0,
+                            fontWeight: '500',
+                            textAlign: 'center'
+                        }}>
+                            ⚠️ Currently, only Selar is available for purchases. Other payment options will be available soon.
+                        </p>
+                    </div>
                 </div>
 
                 <div style={{
@@ -271,39 +296,64 @@ export default function Pricing() {
                                 ))}
                             </ul>
 
-                            <a
-                                href={platform.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    textAlign: 'center',
-                                    display: 'block',
-                                    padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)',
-                                    fontSize: '0.95rem',
-                                    fontWeight: '600',
-                                    borderRadius: '10px',
-                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    boxShadow: platform.featured ? (darkMode ? '0 4px 15px rgba(13, 110, 253, 0.5)' : '0 4px 15px rgba(13, 110, 253, 0.3)') : (darkMode ? '0 2px 8px rgba(0, 0, 0, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.1)'),
-                                    backgroundColor: platform.featured ? '#0d6efd' : (darkMode ? '#30363d' : '#f0f4f8'),
-                                    color: platform.featured ? '#ffffff' : (darkMode ? '#e6edf3' : '#0d6efd'),
-                                    border: 'none',
-                                    textDecoration: 'none',
-                                    cursor: 'pointer',
-                                    letterSpacing: '0.3px',
-                                    position: 'relative',
-                                    overflow: 'hidden'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.target.style.transform = 'translateY(-2px)';
-                                    e.target.style.boxShadow = platform.featured ? '0 8px 25px rgba(13, 110, 253, 0.4)' : '0 4px 12px rgba(0, 0, 0, 0.15)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.transform = 'translateY(0)';
-                                    e.target.style.boxShadow = platform.featured ? '0 4px 15px rgba(13, 110, 253, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.1)';
-                                }}
-                            >
-                                {platform.cta}
-                            </a>
+                            {platform.active ? (
+                                <a
+                                    href={platform.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        textAlign: 'center',
+                                        display: 'block',
+                                        padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)',
+                                        fontSize: '0.95rem',
+                                        fontWeight: '600',
+                                        borderRadius: '10px',
+                                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        boxShadow: platform.featured ? (darkMode ? '0 4px 15px rgba(13, 110, 253, 0.5)' : '0 4px 15px rgba(13, 110, 253, 0.3)') : (darkMode ? '0 2px 8px rgba(0, 0, 0, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.1)'),
+                                        backgroundColor: platform.featured ? '#0d6efd' : (darkMode ? '#30363d' : '#f0f4f8'),
+                                        color: platform.featured ? '#ffffff' : (darkMode ? '#e6edf3' : '#0d6efd'),
+                                        border: 'none',
+                                        textDecoration: 'none',
+                                        cursor: 'pointer',
+                                        letterSpacing: '0.3px',
+                                        position: 'relative',
+                                        overflow: 'hidden'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.transform = 'translateY(-2px)';
+                                        e.target.style.boxShadow = platform.featured ? '0 8px 25px rgba(13, 110, 253, 0.4)' : '0 4px 12px rgba(0, 0, 0, 0.15)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.transform = 'translateY(0)';
+                                        e.target.style.boxShadow = platform.featured ? '0 4px 15px rgba(13, 110, 253, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.1)';
+                                    }}
+                                >
+                                    {platform.cta}
+                                </a>
+                            ) : (
+                                <button
+                                    disabled
+                                    style={{
+                                        textAlign: 'center',
+                                        display: 'block',
+                                        padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem)',
+                                        fontSize: '0.95rem',
+                                        fontWeight: '600',
+                                        borderRadius: '10px',
+                                        boxShadow: darkMode ? '0 2px 8px rgba(0, 0, 0, 0.3)' : '0 2px 8px rgba(0, 0, 0, 0.1)',
+                                        backgroundColor: darkMode ? '#2d3748' : '#e9ecef',
+                                        color: darkMode ? '#718096' : '#6c757d',
+                                        border: 'none',
+                                        cursor: 'not-allowed',
+                                        letterSpacing: '0.3px',
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        width: '100%'
+                                    }}
+                                >
+                                    {platform.cta}
+                                </button>
+                            )}
                         </div>
                     ))}
                 </div>

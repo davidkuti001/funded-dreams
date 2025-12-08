@@ -122,7 +122,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Social Media */}
+                    {/* Social Media & Contact */}
                     <div style={{ animation: 'fadeInUp 0.6s ease-out 0.2s both' }}>
                         <h5 style={{
                             fontWeight: '700',
@@ -131,7 +131,7 @@ export default function Footer() {
                             color: '#ffffff',
                             letterSpacing: '0.5px',
                         }}>Follow Us</h5>
-                        <div style={{ display: 'flex', gap: '1.2rem' }}>
+                        <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'center' }}>
                             <a
                                 href="https://youtube.com/@cedarstravelandtours?si=uqtfBeHvKUXhoKjW"
                                 target="_blank"
@@ -220,6 +220,36 @@ export default function Footer() {
                             >
                                 <i className="fab fa-instagram"></i>
                             </a>
+                            {/* Feedback Button */}
+                            <button
+                                onClick={() => window.dispatchEvent(new CustomEvent('openFeedbackForm'))}
+                                style={{
+                                    color: '#ffffff',
+                                    fontSize: '1.4rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '50%',
+                                    backgroundColor: 'rgba(25, 135, 84, 0.8)',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    ...linkHoverStyle,
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#198754';
+                                    e.currentTarget.style.transform = 'scale(1.1) translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'rgba(25, 135, 84, 0.8)';
+                                    e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                                }}
+                                title="Send feedback or inquiry"
+                            >
+                                <i className="fas fa-envelope"></i>
+                            </button>
                         </div>
                     </div>
                 </div>

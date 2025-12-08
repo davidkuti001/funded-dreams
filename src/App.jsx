@@ -3,11 +3,14 @@ import { DarkModeProvider } from "./DarkModeContext";
 import Hero from "./components/Hero";
 import TOC from "./components/TOC";
 import Pricing from "./components/Pricing";
+import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
+import FeedbackForm from "./components/FeedbackForm";
 
 function App() {
     const [darkMode, setDarkMode] = useState(true);
     const [showScrollTop, setShowScrollTop] = useState(false);
+    const [showFeedbackForm, setShowFeedbackForm] = useState(false);
 
     // Handle scroll to show/hide scroll to top button
     useEffect(() => {
@@ -17,6 +20,16 @@ function App() {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Handle feedback form opening from footer
+    useEffect(() => {
+        const handleOpenFeedbackForm = () => {
+            setShowFeedbackForm(true);
+        };
+
+        window.addEventListener('openFeedbackForm', handleOpenFeedbackForm);
+        return () => window.removeEventListener('openFeedbackForm', handleOpenFeedbackForm);
     }, []);
 
     // Apply dark mode to document
@@ -50,40 +63,47 @@ function App() {
             transition: 'background-color 0.3s ease, color 0.3s ease',
             minHeight: '100vh'
         }}>
-            {/* Dark Mode Toggle Button */}
-            <button
-                onClick={() => setDarkMode(!darkMode)}
-                style={{
-                    position: 'fixed',
-                    top: '1.5rem',
-                    right: '1.5rem',
-                    zIndex: 1000,
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '50%',
-                    backgroundColor: darkMode ? '#1f6feb' : '#0d6efd',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.4rem',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    color: '#ffffff'
-                }}
-                onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                    e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-                }}
-                title={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
-            >
-                {darkMode ? '☀️' : '🌙'}
-            </button>
+            {/* Header Buttons */}
+            <div style={{
+                position: 'fixed',
+                top: '1.5rem',
+                right: '1.5rem',
+                zIndex: 1000,
+                display: 'flex',
+                gap: '1rem',
+                alignItems: 'center'
+            }}>
+                {/* Dark Mode Toggle Button */}
+                <button
+                    onClick={() => setDarkMode(!darkMode)}
+                    style={{
+                        width: '50px',
+                        height: '50px',
+                        borderRadius: '50%',
+                        backgroundColor: darkMode ? '#1f6feb' : '#0d6efd',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1.4rem',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        color: '#ffffff'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'scale(1.1)';
+                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1)';
+                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+                    }}
+                    title={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+                >
+                    {darkMode ? '☀️' : '🌙'}
+                </button>
+            </div>
 
             {/* Main Content */}
             <DarkModeProvider value={{ darkMode, setDarkMode }}>
@@ -91,6 +111,7 @@ function App() {
                     <Hero />
                     <TOC />
                     <Pricing />
+                    <Reviews />
                     <Footer />
                 </div>
             </DarkModeProvider>
@@ -185,6 +206,14 @@ function App() {
                     </button>
                 )}
             </div>
+
+            {/* Feedback Form Modal */}
+            <DarkModeProvider value={{ darkMode, setDarkMode }}>
+                <FeedbackForm
+                    isOpen={showFeedbackForm}
+                    onClose={() => setShowFeedbackForm(false)}
+                />
+            </DarkModeProvider>
 
             {/* Animations */}
             <style>{`

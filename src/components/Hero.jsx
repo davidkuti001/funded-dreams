@@ -199,42 +199,25 @@ export default function Hero() {
                                 Buy on Selar
                             </a>
 
-                            <a
-                                href="https://gumroad.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                disabled
                                 style={{
                                     display: "inline-flex",
                                     alignItems: "center",
                                     gap: "0.5rem",
                                     padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.8rem)',
-                                    background: 'transparent',
-                                    color: '#ffffff',
-                                    border: '2px solid rgba(255, 255, 255, 0.5)',
-                                    textDecoration: 'none',
+                                    background: 'rgba(255, 255, 255, 0.1)',
+                                    color: 'rgba(255, 255, 255, 0.5)',
+                                    border: '2px solid rgba(255, 255, 255, 0.2)',
                                     borderRadius: '8px',
                                     fontWeight: '600',
                                     fontSize: '1rem',
-                                    cursor: 'pointer',
+                                    cursor: 'not-allowed',
                                     transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)'
                                 }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-                                    e.currentTarget.style.borderColor = '#00d4ff';
-                                    e.currentTarget.style.color = '#00d4ff';
-                                    e.currentTarget.style.transform = 'translateY(-4px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 212, 255, 0.3)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.background = 'transparent';
-                                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
-                                    e.currentTarget.style.color = '#ffffff';
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                }}
                             >
-                                View on Gumroad
-                            </a>
+                                Coming Soon
+                            </button>
                         </div>
 
                         {/* Stats with enhanced styling */}
