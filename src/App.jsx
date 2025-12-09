@@ -6,7 +6,6 @@ import Pricing from "./components/Pricing";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
 import FeedbackForm from "./components/FeedbackForm";
-import { Analytics } from "@vercel/analytics/next"
 
 function App() {
     const [darkMode, setDarkMode] = useState(true);
